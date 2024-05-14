@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.black {
+  color: #000;
+}
+header {
+  background-color: #00CED1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: px;
+  height: 70px;
+}
+
+nav {
+  background-color: #008B8B;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+main {
+  padding: 20px;
+  position: relative; /* Add position relative */
+}
+
+h2 {
+  text-align: center; /* Center align the h2 */
+  position: absolute; /* Set position to absolute */
+  top: 20px; /* Adjust top position as needed */
+  left: 50%; /* Move to the center horizontally */
+  transform: translateX(-50%); /* Adjust horizontally centered */
+}
+
+.photo-slot {
+  background-color: #444; /* Placeholder background color */
+  width: 100%; /* Span the entire width */
+  text-align: center; /* Center the image */
+}
+
+.photo-slot img {
+  max-width: 100%; /* Ensure image fits container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.last {
+  text-align: center;
+  color: #00CED1;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+}
+.buttons {
+  text-align: center; /* Center the buttons */
+  margin-top: 20px; /* Add space between photo and buttons */
+}
+
+.buttons a {
+  margin: 10px; /* Add margin for spacing between buttons */
+  background-color: #008B8B; /* Cyan background color */
+  padding: 15px 30px; /* Increase padding */
+  color: #fff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 30px; /* Add border radius for rounded appearance */
+  transition: background-color 0.3s, transform 0.3s; /* Add transitions for hover effect */
+  display: inline-flex; /* Set display to flex */
+  align-items: center; /* Center items vertically */
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Add bold font weight */
+}
+
+.buttons a:hover {
+  background-color: #00CED1; /* Change background color on hover */
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.buttons svg {
+  width: 24px; /* Set width of SVG icons */
+  margin-right: 10px; /* Add margin between icon and text */
+}
+
+
+footer {
+  background-color: #00FFFF; /* Cyan background color */
+  text-align: center;
+  padding: 20px 0;
+  color: #000; /* Set text color to black */
+}
