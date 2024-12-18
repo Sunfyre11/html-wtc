@@ -34,18 +34,33 @@
         }
         .payment-option {
             margin: 10px;
-            padding: 10px;
-            background-color: #007bff;
+            padding: 15px;
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-size: 16px;
             display: block;
             cursor: pointer;
-            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
         }
         .payment-option:hover {
-            background-color: #0056b3;
+            opacity: 0.8;
+        }
+        .googlepay-btn {
+            background-color: #007bff;
+        }
+        .phonepe-btn {
+            background-color: #6a1b9a; /* Purple PhonePe background */
+            color: white;
+        }
+        .paytm-btn {
+            background-color: #ff8c00; /* Paytm orange background */
+            font-weight: bold;
+        }
+        .paytm-btn span {
+            color: lightblue;
         }
         .dropdown-content {
             display: none;
@@ -102,9 +117,14 @@
         </div>
         
         <div class="payment-options">
-            <button class="payment-option" onclick="toggleDropdown('googlepay-dropdown')">Google Pay</button>
-            <button class="payment-option" onclick="toggleDropdown('phonepe-dropdown')">PhonePe</button>
-            <button class="payment-option" onclick="toggleDropdown('paytm-dropdown')">Paytm</button>
+            <!-- Google Pay Option -->
+            <button class="payment-option googlepay-btn" onclick="toggleDropdown('googlepay-dropdown')">Pay from Google Pay</button>
+
+            <!-- PhonePe Option -->
+            <button class="payment-option phonepe-btn" onclick="toggleDropdown('phonepe-dropdown')">Pay from PhonePe</button>
+
+            <!-- Paytm Option -->
+            <button class="payment-option paytm-btn" onclick="toggleDropdown('paytm-dropdown')"><span>PAY</span>tm</button>
         </div>
 
         <!-- Google Pay Dropdown -->
@@ -136,3 +156,4 @@
     </div>
 </body>
 </html>
+
