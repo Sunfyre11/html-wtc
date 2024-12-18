@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .details {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .payment-options {
+            margin-top: 30px;
+        }
+        .payment-option {
+            margin: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+        }
+        .payment-option:hover {
+            background-color: #0056b3;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #f1f1f1;
+            min-width: 300px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 10px;
+        }
+        .dropdown-content p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .dropdown-content img {
+            width: 150px;
+            height: 150px;
+            background-color: #eee;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+        .open-app-btn {
+            padding: 10px 20px;
+            background-color: #25D366; /* WhatsApp green for consistency */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .open-app-btn:hover {
+            background-color: #1ebe57;
+        }
+    </style>
+    <script>
+        function toggleDropdown(app) {
+            var dropdown = document.getElementById(app);
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>UPI Payment Details</h1>
+        <div class="details">
+            <p><strong>Recipient UPI ID:</strong> example@upi</p>
+        </div>
+        
+        <div class="payment-options">
+            <button class="payment-option" onclick="toggleDropdown('googlepay-dropdown')">Google Pay</button>
+            <button class="payment-option" onclick="toggleDropdown('phonepe-dropdown')">PhonePe</button>
+            <button class="payment-option" onclick="toggleDropdown('paytm-dropdown')">Paytm</button>
+        </div>
+
+        <!-- Google Pay Dropdown -->
+        <div id="googlepay-dropdown" class="dropdown-content">
+            <p><strong>Recipient UPI ID:</strong> example@upi</p>
+            <div>
+                <img src="qr_code_googlepay.png" alt="Google Pay QR Code">
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.paisa.user" class="open-app-btn" target="_blank">Open Google Pay</a>
+        </div>
+
+        <!-- PhonePe Dropdown -->
+        <div id="phonepe-dropdown" class="dropdown-content">
+            <p><strong>Recipient UPI ID:</strong> example@upi</p>
+            <div>
+                <img src="qr_code_phonepe.png" alt="PhonePe QR Code">
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.phonepe.app" class="open-app-btn" target="_blank">Open PhonePe</a>
+        </div>
+
+        <!-- Paytm Dropdown -->
+        <div id="paytm-dropdown" class="dropdown-content">
+            <p><strong>Recipient UPI ID:</strong> example@upi</p>
+            <div>
+                <img src="qr_code_paytm.png" alt="Paytm QR Code">
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.paytm.payments" class="open-app-btn" target="_blank">Open Paytm</a>
+        </div>
+    </div>
+</body>
+</html>
