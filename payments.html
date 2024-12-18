@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .payment-option {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+        }
+        .payment-option:hover {
+            background-color: #e0e0e0;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Options</h1>
+        <form action="/process-payment" method="POST">
+            <div class="payment-option">
+                <input type="radio" id="net-banking" name="payment-method" value="Net Banking" required>
+                <label for="net-banking">Net Banking</label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="upi-payments" name="payment-method" value="UPI Payments" required>
+                <label for="upi-payments">UPI Payments</label>
+            </div>
+            <button type="submit" class="button">Proceed to Pay</button>
+        </form>
+    </div>
+</body>
+</html>
