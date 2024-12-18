@@ -38,15 +38,66 @@
         .bank-link {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
             text-decoration: none;
             border-radius: 8px;
             font-size: 14px;
             text-align: center;
+            font-weight: bold;
         }
         .bank-link:hover {
-            background-color: #0056b3;
+            opacity: 0.9;
+        }
+
+        /* SBI button */
+        .sbi {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Punjab National Bank button */
+        .pnb {
+            background-color: #d32f2f;
+            color: #ffeb3b;
+        }
+
+        /* Bank of Baroda button */
+        .bob {
+            background-color: white;
+            color: #ff5722;
+            border: 2px solid #ff5722;
+        }
+
+        /* Axis Bank button */
+        .axis {
+            background-color: white;
+            color: #800000;
+            border: 2px solid #800000;
+        }
+
+        /* ICICI Bank button */
+        .icici {
+            background: linear-gradient(to right, #ff4500, #ff8c00);
+            color: #00008b;
+        }
+
+        /* HDFC Bank button */
+        .hdfc {
+            background-color: #00008b;
+            color: white;
+            border: 2px solid transparent;
+            position: relative;
+        }
+        .hdfc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px solid red;
+            border-width: 0 4px 4px 0;
+            border-radius: 8px;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -60,12 +111,12 @@
         </div>
         <h2>Sender's Bank</h2>
         <div class="bank-links">
-            <a href="https://www.onlinesbi.com/" class="bank-link" target="_blank">State Bank of India</a>
-            <a href="https://www.bankofbaroda.in/" class="bank-link" target="_blank">Bank of Baroda</a>
-            <a href="https://www.pnbindia.in/" class="bank-link" target="_blank">Punjab National Bank</a>
-            <a href="https://www.axisbank.com/" class="bank-link" target="_blank">Axis Bank</a>
-            <a href="https://www.icicibank.com/" class="bank-link" target="_blank">ICICI Bank</a>
-            <a href="https://www.hdfcbank.com/" class="bank-link" target="_blank">HDFC Bank</a>
+            <a href="https://www.onlinesbi.com/" class="bank-link sbi" target="_blank">State Bank of India</a>
+            <a href="https://www.pnbindia.in/" class="bank-link pnb" target="_blank">Punjab National Bank</a>
+            <a href="https://www.bankofbaroda.in/" class="bank-link bob" target="_blank">Bank of Baroda</a>
+            <a href="https://www.axisbank.com/" class="bank-link axis" target="_blank">Axis Bank</a>
+            <a href="https://www.icicibank.com/" class="bank-link icici" target="_blank">ICICI Bank</a>
+            <a href="https://www.hdfcbank.com/" class="bank-link hdfc" target="_blank">HDFC Bank</a>
         </div>
     </div>
 </body>
