@@ -101,11 +101,22 @@
     </style>
     <script>
         function toggleDropdown(app) {
-            var dropdown = document.getElementById(app);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
+            // Get all dropdowns
+            var dropdowns = document.querySelectorAll('.dropdown-content');
+            
+            // Close all dropdowns except the one clicked
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.id !== app) {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            // Toggle the selected dropdown
+            var selectedDropdown = document.getElementById(app);
+            if (selectedDropdown.style.display === 'none' || selectedDropdown.style.display === '') {
+                selectedDropdown.style.display = 'block';
             } else {
-                dropdown.style.display = "none";
+                selectedDropdown.style.display = 'none';
             }
         }
     </script>
