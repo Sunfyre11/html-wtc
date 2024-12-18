@@ -48,6 +48,7 @@
             text-align: center;
             font-size: 16px;
             cursor: pointer;
+            text-decoration: none;
         }
         .button:hover {
             background-color: #0056b3;
@@ -57,7 +58,7 @@
 <body>
     <div class="container">
         <h1>Payment Options</h1>
-        <form action="/process-payment" method="POST">
+        <form>
             <div class="payment-option">
                 <input type="radio" id="net-banking" name="payment-method" value="Net Banking" required>
                 <label for="net-banking">Net Banking</label>
@@ -66,8 +67,23 @@
                 <input type="radio" id="upi-payments" name="payment-method" value="UPI Payments" required>
                 <label for="upi-payments">UPI Payments</label>
             </div>
-            <button type="submit" class="button">Proceed to Pay</button>
+            <a href="netbanking.html" class="button" id="proceed-btn" style="display: none;">Proceed to Pay</a>
         </form>
     </div>
+    <script>
+        const netBankingRadio = document.getElementById("net-banking");
+        const proceedBtn = document.getElementById("proceed-btn");
+
+        document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (netBankingRadio.checked) {
+                    proceedBtn.style.display = "block";
+                    proceedBtn.href = "netbanking.html";
+                } else {
+                    proceedBtn.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
