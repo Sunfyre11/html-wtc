@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Payments</title>
+    <title>Payment Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,80 +18,72 @@
             background: #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            text-align: center;
         }
-        h1, h2 {
+        h1 {
+            text-align: center;
             color: #333;
         }
-        .details {
-            margin: 20px 0;
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-        .qr-code {
-            margin: 20px auto;
-            width: 200px;
-            height: 200px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed #ccc;
+        .payment-option {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
             border-radius: 8px;
-            font-size: 14px;
-            color: #888;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
         }
-        .input-container {
-            margin: 20px 0;
+        .payment-option:hover {
+            background-color: #e0e0e0;
         }
-        .input-container label {
+        .button {
             display: block;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        .input-container input {
             width: 100%;
             padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .submit-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            margin: 20px 0;
             background-color: #007bff;
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            text-align: center;
-            cursor: pointer;
             border: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
         }
-        .submit-button:hover {
+        .button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>UPI Payment Details</h1>
-        <div class="details">
-            <p><strong>Recipient UPI ID:</strong> example@upi</p>
-            <p>Scan the QR code below to make a payment:</p>
-        </div>
-        <div class="qr-code">
-            QR Code Placeholder
-        </div>
-        <div class="input-container">
-            <label for="upi-ref">Enter UPI Reference Number (Optional):</label>
-            <input type="text" id="upi-ref" name="upi-ref" placeholder="Enter reference number">
-        </div>
-        <button class="submit-button">Submit Payment</button>
+        <h1>Payment Options</h1>
+        <form>
+            <div class="payment-option">
+                <input type="radio" id="net-banking" name="payment-method" value="Net Banking" required>
+                <label for="net-banking">Net Banking</label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="upi-payments" name="payment-method" value="UPI Payments" required>
+                <label for="upi-payments">UPI Payments</label>
+            </div>
+            <a href="netbanking.html" class="button" id="proceed-btn" style="display: none;">Proceed to Pay</a>
+        </form>
     </div>
+    <script>
+        const netBankingRadio = document.getElementById("net-banking");
+        const proceedBtn = document.getElementById("proceed-btn");
+
+        document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (netBankingRadio.checked) {
+                    proceedBtn.style.display = "block";
+                    proceedBtn.href = "netbanking.html";
+                } else {
+                    proceedBtn.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
