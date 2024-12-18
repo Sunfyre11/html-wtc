@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
+    <title>Payment Options</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,67 +23,37 @@
             text-align: center;
             color: #333;
         }
+        .payment-options {
+            margin-top: 30px;
+        }
         .payment-option {
-            margin: 15px 0;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f1f1f1;
-            cursor: pointer;
-            text-align: center;
-            font-size: 18px;
-        }
-        .payment-option:hover {
-            background-color: #e0e0e0;
-        }
-        .button {
-            display: block;
-            width: 100%;
+            margin: 10px;
             padding: 10px;
-            margin: 20px 0;
             background-color: #007bff;
             color: white;
-            border: none;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 16px;
-            cursor: pointer;
             text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            display: block;
+            cursor: pointer;
+            text-align: center;
         }
-        .button:hover {
+        .payment-option:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Payment Options</h1>
-        <form>
-            <div class="payment-option">
-                <input type="radio" id="net-banking" name="payment-method" value="Net Banking" required>
-                <label for="net-banking">Net Banking</label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" id="upi-payments" name="payment-method" value="UPI Payments" required>
-                <label for="upi-payments">UPI Payments</label>
-            </div>
-            <a href="netbanking.html" class="button" id="proceed-btn" style="display: none;">Proceed to Pay</a>
-        </form>
+        <h1>Select Payment Method</h1>
+        
+        <div class="payment-options">
+            <!-- Net Banking Link -->
+            <a href="net_banking.html" class="payment-option">Net Banking</a>
+            
+            <!-- UPI Payments Link -->
+            <a href="upi.html" class="payment-option">UPI Payments</a>
+        </div>
     </div>
-    <script>
-        const netBankingRadio = document.getElementById("net-banking");
-        const proceedBtn = document.getElementById("proceed-btn");
-
-        document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
-            radio.addEventListener('change', () => {
-                if (netBankingRadio.checked) {
-                    proceedBtn.style.display = "block";
-                    proceedBtn.href = "netbanking.html";
-                } else {
-                    proceedBtn.style.display = "none";
-                }
-            });
-        });
-    </script>
 </body>
 </html>
