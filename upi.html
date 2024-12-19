@@ -23,12 +23,6 @@
         h1 {
             color: #333;
         }
-        .details {
-            margin: 20px 0;
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
         .payment-options {
             margin-top: 30px;
         }
@@ -45,15 +39,11 @@
             max-width: 300px;
             margin: 10px auto;
         }
-        .payment-option:hover {
-            opacity: 0.8;
-        }
         .googlepay-btn {
             background-color: #007bff;
         }
         .phonepe-btn {
             background-color: #6a1b9a;
-            color: white;
         }
         .paytm-btn {
             background-color: white;
@@ -128,14 +118,11 @@
 <body>
     <div class="container">
         <h1>UPI Payment Details</h1>
-        <div class="details">
-            <p><strong>Recipient UPI ID:</strong> example@upi</p>
-        </div>
         
         <div class="payment-options">
             <button class="payment-option googlepay-btn" onclick="toggleDropdown('googlepay-dropdown')">Pay from Google Pay</button>
             <button class="payment-option phonepe-btn" onclick="toggleDropdown('phonepe-dropdown')">Pay from PhonePe</button>
-            <button class="payment-option paytm-btn" onclick="toggleDropdown('paytm-dropdown')"><span>PAY</span>tm</button>
+            <button class="payment-option paytm-btn" onclick="toggleDropdown('paytm-dropdown')">Pay from <span>PAY</span>tm</button>
         </div>
 
         <!-- Google Pay Dropdown -->
@@ -147,6 +134,7 @@
             <div class="button-group">
                 <button onclick="copyToClipboard('example@upi')">Copy UPI ID</button>
                 <a href="qr_code_googlepay.png" download="GooglePay_QR_Code.png">Download QR Code</a>
+                <a href="intent://pay?pa=example@upi&pn=RecipientName&mc=0000&tid=02125412&tr=TRXID12345&tn=PaymentForServices&am=1.00&cu=INR&url=https://www.example.com#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end;" target="_blank">Open Google Pay</a>
             </div>
         </div>
 
@@ -159,6 +147,7 @@
             <div class="button-group">
                 <button onclick="copyToClipboard('example@upi')">Copy UPI ID</button>
                 <a href="qr_code_phonepe.png" download="PhonePe_QR_Code.png">Download QR Code</a>
+                <a href="intent://upi_pay#Intent;scheme=upi;package=com.phonepe.app;end;" target="_blank">Open PhonePe</a>
             </div>
         </div>
 
@@ -171,6 +160,7 @@
             <div class="button-group">
                 <button onclick="copyToClipboard('example@upi')">Copy UPI ID</button>
                 <a href="qr_code_paytm.png" download="Paytm_QR_Code.png">Download QR Code</a>
+                <a href="intent://pay?pa=example@upi&pn=RecipientName&mc=0000&tid=02125412&tr=TRXID12345&tn=PaymentForServices&am=1.00&cu=INR&url=https://www.example.com#Intent;scheme=upi;package=net.one97.paytm;end;" target="_blank">Open Paytm</a>
             </div>
         </div>
     </div>
