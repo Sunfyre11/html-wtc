@@ -126,7 +126,7 @@
         <div class="payment-options">
             <button class="payment-option googlepay-btn" onclick="toggleDropdown('googlepay-dropdown')">Pay from Google Pay</button>
             <button class="payment-option phonepe-btn" onclick="toggleDropdown('phonepe-dropdown')">Pay from PhonePe</button>
-            <button class="payment-option paytm-btn" onclick="toggleDropdown('paytm-dropdown')"><span>PAY</span>tm</button>
+            <button class="payment-option paytm-btn" onclick="toggleDropdown('paytm-dropdown')">Pay from <span>PAY</span>tm</button>
         </div>
 
         <!-- Google Pay Dropdown -->
@@ -138,7 +138,8 @@
             <div class="button-group">
                 <button onclick="copyToClipboard('example@upi')">Copy UPI ID</button>
                 <a href="qr_code_googlepay.png" download="GooglePay_QR_Code.png">Download QR Code</a>
-                <a href="intent://#Intent;package=com.google.android.apps.nbu.paisa.user;end;" target="_blank">Open Google Pay</a>
+                <a href="intent://pay#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;S.com.google.android.apps.nbu.paisa.user.QR_SCAN=true;end">Open Google Pay</a>
+
             </div>
         </div>
 
