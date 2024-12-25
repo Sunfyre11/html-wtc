@@ -15,13 +15,26 @@
             width: 300px;
             height: auto;
         }
-        .dropdowns {
-            margin: 30px 0;
-            text-align: center;
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            margin-bottom: 5px;
         }
-        select {
-            margin: 10px;
-            padding: 10px;
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+        .content {
+            padding: 0 15px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
             font-size: 16px;
         }
     </style>
@@ -51,24 +64,37 @@
     <p>In response to requests for family tours, we have launched “Family Trips from Kolkata,” managed by Jhumur Nandy and Manas Nandy. Upcoming trips will be shared here and on our <a href="https://www.facebook.com/share/g/15WhLAve8J" target="_blank" rel="noopener noreferrer">Facebook group</a>. To join our WhatsApp group, text “Family” to <a href="https://wa.me/9433135550">9433135550</a> or <a href="https://wa.me/9163407717">9163407717</a>.</p>
 </main>
 
-<div class="dropdowns">
-    <label for="previous-trips">Previous Trips:</label>
-    <select id="previous-trips">
-        <option value="" disabled selected>Select a trip</option>
-        <!-- Add previous trips here -->
-    </select>
+<div>
+    <button class="collapsible">Previous Trips</button>
+    <div class="content">
+        <p>No trips listed yet.</p>
+    </div>
 
-    <label for="upcoming-trips">Upcoming Trips:</label>
-    <select id="upcoming-trips">
-        <option value="" disabled selected>Select a trip</option>
-        <option value="dooars">Enchanting Dooars April 12 to 15, 2025</option>
-    </select>
+    <button class="collapsible">Upcoming Trips</button>
+    <div class="content">
+        <p>Enchanting Dooars April 12 to 15, 2025</p>
+    </div>
 </div>
 
 <footer>
     <p>&copy; 2024 Women's Travel Club. All rights reserved.</p>
     <p>Contact Us: <a href="tel:+9163407717">9163407717</a> | <a href="mailto:wtckolkata03@gmail.com">wtckolkata03@gmail.com</a></p>
 </footer>
+
+<script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach((collapsible) => {
+        collapsible.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
