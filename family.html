@@ -15,6 +15,15 @@
             width: 300px;
             height: auto;
         }
+        .dropdowns {
+            margin: 30px 0;
+            text-align: center;
+        }
+        select {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -41,6 +50,20 @@
     </div>
     <p>In response to requests for family tours, we have launched “Family Trips from Kolkata,” managed by Jhumur Nandy and Manas Nandy. Upcoming trips will be shared here and on our <a href="https://www.facebook.com/share/g/15WhLAve8J" target="_blank" rel="noopener noreferrer">Facebook group</a>. To join our WhatsApp group, text “Family” to <a href="https://wa.me/9433135550">9433135550</a> or <a href="https://wa.me/9163407717">9163407717</a>.</p>
 </main>
+
+<div class="dropdowns">
+    <label for="previous-trips">Previous Trips:</label>
+    <select id="previous-trips">
+        <option value="" disabled selected>Select a trip</option>
+        <!-- Add previous trips here -->
+    </select>
+
+    <label for="upcoming-trips">Upcoming Trips:</label>
+    <select id="upcoming-trips">
+        <option value="" disabled selected>Select a trip</option>
+        <option value="dooars">Enchanting Dooars April 12 to 15, 2025</option>
+    </select>
+</div>
 
 <footer>
     <p>&copy; 2024 Women's Travel Club. All rights reserved.</p>
